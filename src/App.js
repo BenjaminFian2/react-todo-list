@@ -35,7 +35,11 @@ const getTasks = async () => {
 
 function App() {
   //initialisation of a state who's an object with a boolean, a string and an array.
-  const [tasks, setTasks] = useState(getTasks());
+  const [tasks, setTasks] = useState({
+    search: "",
+    darkMode: "day",
+    todos: [],
+  });
 
   console.log(tasks);
 
