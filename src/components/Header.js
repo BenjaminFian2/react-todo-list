@@ -19,7 +19,6 @@ const Header = ({ mode, tasks }) => {
             <label htmlFor="toggle" className="toggle--label">
               <span className="toggle--label-background"></span>
             </label>
-            <div className="background"></div>
           </div>
         </div>
       </header>

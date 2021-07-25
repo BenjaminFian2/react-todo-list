@@ -20,6 +20,7 @@
 
 body {
   font-family: "Helvetica";
+  min-width: 320px;
 }
 
 .App {
@@ -60,7 +61,6 @@ header > div {
 
 .mode {
   margin: 0 100px;
-  font-size: 50px;
 }
 
 header p {
@@ -117,7 +117,9 @@ hr {
 
 .NewTaskSearch {
   margin-top: 40px;
-  display: flex;
+}
+
+form {
   position: relative;
 }
 
@@ -314,7 +316,7 @@ Footer {
   content: "";
   width: 82px;
   height: 82px;
-  border: 5px solid var(--yellow-border);
+  border: 2px solid var(--yellow-border);
   top: 4px;
   left: 4px;
   position: absolute;
@@ -326,7 +328,7 @@ Footer {
   transition: all 250ms ease-in;
   position: absolute;
   content: "";
-  box-shadow: var(--gray-dots) -13px 0 0 2px, var(--gray-dots) -24px 14px 0 -2px;
+  /* box-shadow: var(--gray-dots) -13px 0 0 2px, var(--gray-dots) -24px 14px 0 -2px; */
   left: 143px;
   top: 23px;
   width: 10px;
@@ -360,5 +362,276 @@ Footer {
   }
   100% {
     left: 4px;
+  }
+}
+
+/*RESPONSIVE*/
+
+/*Tablette*/
+@media (max-width: 1080px) AND (min-width: 768px) {
+  header {
+    height: 100px; /*150*/
+  }
+
+  .iconH {
+    margin: 0 50px; /*100*/
+    font-size: 60px; /*120*/
+  }
+
+  .mode {
+    margin: 0 50px; /*100*/
+  }
+
+  header p {
+    font-size: 40px; /*65*/
+  }
+
+  hr {
+    margin-bottom: 30px; /*60*/
+  }
+
+  Footer {
+    margin-top: 50px; /*100*/
+  }
+
+  .Footer p {
+    font-size: 18px; /*25*/
+  }
+
+  .toggle--checkbox:checked + .toggle--label .toggle--label-background {
+    left: 30px; /*60*/
+    width: 2px; /*5*/
+  }
+  .toggle--checkbox:checked + .toggle--label .toggle--label-background:before {
+    width: 2px; /*5*/
+    height: 2px; /*5*/
+    top: -12px; /*-25*/
+  }
+  .toggle--checkbox:checked + .toggle--label .toggle--label-background:after {
+    width: 2px; /*5*/
+    height: 2px; /*5*/
+    left: -15px; /*-30*/
+    top: 10px; /*20*/
+  }
+
+  .toggle--label {
+    width: 100px; /*200*/
+    height: 50px; /*100*/
+    border-radius: 50px; /*100*/
+    border: 2px solid var(--blue-border); /*5*/
+  }
+  .toggle--label-background {
+    width: 5px; /*10*/
+    height: 2px; /*5*/
+    border-radius: 5px; /*5*/
+    left: 68px; /*135*/
+    top: 22px; /*45*/
+  }
+  .toggle--label-background:before {
+    top: -2px; /*-5*/
+    width: 20px; /*40*/
+    height: 2px; /*5*/
+    border-radius: 2px; /*5*/
+    left: -10px; /*-20*/
+  }
+  .toggle--label-background:after {
+    top: 2px; /*5*/
+    width: 20px; /*40*/
+    height: 2px; /*5*/
+    border-radius: 5px; /*5*/
+    left: -5px; /*-10*/
+  }
+  .toggle--label:before {
+    width: 41px; /*82*/
+    height: 41px; /*82*/
+    top: 2px; /*4*/
+    left: 2px; /*4*/
+    border-radius: 41px; /*82*/
+  }
+  .toggle--label:after {
+    left: 71px; /*143*/
+    top: 11px; /*23*/
+    width: 5px; /*10*/
+    height: 5px; /*10*/
+  }
+
+  @keyframes switch {
+    0% {
+      left: 2px; /*4*/
+    }
+    60% {
+      left: 2px; /*4*/
+      width: 56px; /*112*/
+    }
+    100% {
+      left: 52px; /*104*/
+      width: 41px; /*82*/
+    }
+  }
+  @keyframes reverse {
+    0% {
+      left: 52px; /*104*/
+      width: 41px; /*82*/
+    }
+    60% {
+      left: 36px; /*72*/
+      width: 56px; /*112*/
+    }
+    100% {
+      left: 2px; /*4*/
+    }
+  }
+}
+
+/*Smartphone*/
+@media (max-width: 767px) AND (min-width: 320px) {
+  header {
+    height: 80px;
+  }
+
+  .iconH {
+    margin: 0 10px;
+    font-size: 50px;
+  }
+
+  .mode {
+    margin: 0 20px;
+  }
+
+  header p {
+    font-size: 23px;
+  }
+
+  hr {
+    margin-bottom: 30px;
+  }
+
+  .Todos {
+    max-height: 400px;
+    width: 275px;
+  }
+
+  .Todo {
+    max-width: 300px;
+  }
+
+  .NewTaskSearch {
+    margin-top: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bar {
+    width: 265px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    padding: 10px 10px 10px 30px;
+  }
+
+  .searchIcon {
+    top: 10px;
+    left: 35px;
+    font-size: 20px;
+  }
+
+  .submit {
+    width: 120px;
+    font-size: 20px;
+  }
+
+  Footer {
+    margin-top: 50px;
+  }
+
+  .Footer p {
+    font-size: 14px;
+  }
+
+  .toggle--checkbox:checked + .toggle--label .toggle--label-background {
+    left: 30px;
+    width: 2px;
+  }
+  .toggle--checkbox:checked + .toggle--label .toggle--label-background:before {
+    width: 2px;
+    height: 2px;
+    top: -12px;
+  }
+  .toggle--checkbox:checked + .toggle--label .toggle--label-background:after {
+    width: 2px;
+    height: 2px;
+    left: -15px;
+    top: 10px;
+  }
+
+  .toggle--label {
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    border: 2px solid var(--blue-border);
+  }
+  .toggle--label-background {
+    width: 5px;
+    height: 2px;
+    border-radius: 5px;
+    left: 68px;
+    top: 22px;
+  }
+  .toggle--label-background:before {
+    top: -2px;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    left: -10px;
+  }
+  .toggle--label-background:after {
+    top: 2px;
+    width: 20px;
+    height: 2px;
+    border-radius: 5px;
+    left: -5px;
+  }
+  .toggle--label:before {
+    width: 41px;
+    height: 41px;
+    top: 2px;
+    left: 2px;
+    border-radius: 41px;
+  }
+  .toggle--label:after {
+    left: 71px;
+    top: 11px;
+    width: 5px;
+    height: 5px;
+  }
+
+  @keyframes switch {
+    0% {
+      left: 2px;
+    }
+    60% {
+      left: 2px;
+      width: 56px;
+    }
+    100% {
+      left: 52px;
+      width: 41px;
+    }
+  }
+  @keyframes reverse {
+    0% {
+      left: 52px;
+      width: 41px;
+    }
+    60% {
+      left: 36px;
+      width: 56px;
+    }
+    100% {
+      left: 2px;
+    }
   }
 }
