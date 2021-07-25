@@ -27,6 +27,7 @@ const NewTaskSearch = ({ tasks, setTasks }) => {
         <input
           className="bar"
           type="text"
+          placeholder="Search or enter a task"
           value={tasks.search}
           onChange={(event) => {
             const obj = { ...tasks };
