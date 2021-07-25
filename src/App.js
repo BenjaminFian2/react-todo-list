@@ -19,13 +19,25 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faListAlt, faTrash, faSearch, faFileExport);
 
-function App() {
-  //initialisation of a state who's an object with a boolean, a string and an array.
-  const [tasks, setTasks] = useState({
+const axios = require("axios");
+
+// a fonction for call all tasks allready save in our database
+const getTasks = async () => {
+  const obj = {
     darkMode: false,
     search: "",
     todos: [],
-  });
+  };
+  const response = await axios.get(`${process.env.REACT_APP_URL_API}/`);
+  obj.todos = response.data;
+  return obj;
+};
+
+function App() {
+  //initialisation of a state who's an object with a boolean, a string and an array.
+  const [tasks, setTasks] = useState(getTasks());
+
+  console.log(tasks);
 
   //a fonction who return all result who match with our search.
   const searchResult = () => {

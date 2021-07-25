@@ -59,6 +59,7 @@ const Todo = ({ index, task, tasks, setTasks }) => {
                 `${process.env.REACT_APP_URL_API}/create`,
                 {
                   title: task.task,
+                  checked: task.checked,
                 }
               );
               console.log(response);

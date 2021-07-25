@@ -83,17 +83,6 @@ hr {
   padding: 15px;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.Todos::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge add Firefox */
-.Todos {
-  -ms-overflow-style: none;
-  scrollbar-width: none; /* Firefox */
-}
-
 .Todo {
   display: flex;
   max-width: 500px;
