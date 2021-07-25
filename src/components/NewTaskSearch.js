@@ -14,7 +14,7 @@ const NewTaskSearch = ({ tasks, setTasks }) => {
             const obj = { ...tasks };
             const tab = obj.todos;
             const obj2 = {
-              task: tasks.search,
+              title: tasks.search,
               checked: false,
             };
             tab.unshift(obj2);

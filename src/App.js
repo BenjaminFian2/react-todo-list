@@ -7,7 +7,7 @@ import Todos from "./components/Todos";
 import NewTaskSearch from "./components/NewTaskSearch";
 
 // import state
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // import and add font awesome icons
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -41,13 +41,21 @@ function App() {
     todos: [],
   });
 
-  console.log(tasks);
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const data = await getTasks();
+      setTasks(data);
+    };
+    fetchTasks();
+  }, []);
+
+  // console.log(tasks);
 
   //a fonction who return all result who match with our search.
   const searchResult = () => {
     const search = [];
     for (let i = 0; i < tasks.todos.length; i++) {
-      if (tasks.todos[i].task.indexOf(tasks.search) !== -1) {
+      if (tasks.todos[i].title.indexOf(tasks.search) !== -1) {
         search.push(tasks.todos[i]);
       }
     }
@@ -72,6 +80,7 @@ function App() {
     <div className={tasks.darkMode ? "App night" : "App day"}>
       <Header mode={mode} tasks={tasks} />
       <hr />
+      {}
       <Todos tasks={tasks} setTasks={setTasks} searchResult={searchResult} />
       <NewTaskSearch tasks={tasks} setTasks={setTasks} />
       <Footer />

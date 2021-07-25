@@ -33,7 +33,7 @@ const Todo = ({ index, task, tasks, setTasks }) => {
         checked={task.checked}
       />
       <div>
-        <label className={task.checked ? "checked" : ""}>{task.task}</label>
+        <label className={task.checked ? "checked" : ""}>{task.title}</label>
       </div>
 
       <span>
@@ -58,11 +58,10 @@ const Todo = ({ index, task, tasks, setTasks }) => {
               const response = await axios.post(
                 `${process.env.REACT_APP_URL_API}/create`,
                 {
-                  title: task.task,
+                  title: task.title,
                   checked: task.checked,
                 }
               );
-              console.log(response);
             } catch (error) {
               console.log(error.message);
             }
