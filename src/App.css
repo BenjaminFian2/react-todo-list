@@ -108,9 +108,15 @@ hr {
 }
 .Todo > span {
   margin-left: 10px;
+  display: flex;
+}
+
+.iconT {
+  margin-right: 10px;
 }
 
 .iconT:hover,
+.iconS:hover,
 .checkbox {
   cursor: pointer;
 }

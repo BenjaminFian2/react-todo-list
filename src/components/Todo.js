@@ -1,6 +1,8 @@
 //import of font awesome library
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+const axios = require("axios");
+
 const Todo = ({ index, task, tasks, setTasks }) => {
   // fonction who marked a checked todo and put it at the bottom of the list.
   // it also unmark an unchecked todo and put it at the top of the list.
@@ -45,6 +47,24 @@ const Todo = ({ index, task, tasks, setTasks }) => {
             tab.splice(index, 1);
             obj.todos = tab;
             setTasks(obj);
+          }}
+        />
+        <FontAwesomeIcon
+          icon="file-export"
+          color="#117bc2"
+          className="iconS"
+          onClick={async () => {
+            try {
+              const response = await axios.post(
+                `${process.env.REACT_APP_URL_API}/create`,
+                {
+                  title: task.task,
+                }
+              );
+              console.log(response);
+            } catch (error) {
+              console.log(error.message);
+            }
           }}
         />
       </span>

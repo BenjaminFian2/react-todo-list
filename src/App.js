@@ -15,8 +15,9 @@ import {
   faListAlt,
   faTrash,
   faSearch,
+  faFileExport,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faListAlt, faTrash, faSearch);
+library.add(faListAlt, faTrash, faSearch, faFileExport);
 
 function App() {
   //initialisation of a state who's an object with a boolean, a string and an array.
@@ -48,7 +49,7 @@ function App() {
     setTasks(obj);
   };
 
-  console.log(tasks);
+  // console.log(tasks);
 
   //transfert of our props (initial state value and a setter for our state) to a Todos component and a NewTaskSearch component.
   return (
