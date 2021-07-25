@@ -23,6 +23,7 @@ const Todo = ({ index, task, tasks, setTasks }) => {
   return (
     <div className="Todo">
       <input
+        className="checkbox"
         type="checkbox"
         onChange={(event) => {
           handleChecked(event);

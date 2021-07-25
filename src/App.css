@@ -110,6 +110,11 @@ hr {
   margin-left: 10px;
 }
 
+.iconT:hover,
+.checkbox {
+  cursor: pointer;
+}
+
 .NewTaskSearch {
   margin-top: 40px;
   display: flex;
