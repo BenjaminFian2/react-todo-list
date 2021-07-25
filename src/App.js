@@ -37,7 +37,7 @@ function App() {
   //initialisation of a state who's an object with a boolean, a string and an array.
   const [tasks, setTasks] = useState({
     search: "",
-    darkMode: "day",
+    darkMode: false,
     todos: [],
   });
 
