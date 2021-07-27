@@ -35,16 +35,18 @@ const getTasks = async () => {
 
 function App() {
   //initialisation of a state who's an object with a boolean, a string and an array.
-  const [tasks, setTasks] = useState({
-    search: "",
-    darkMode: false,
-    todos: [],
-  });
+  const [tasks, setTasks] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchTasks = async () => {
-      const data = await getTasks();
-      setTasks(data);
+      try {
+        const data = await getTasks();
+        setTasks(data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message);
+      }
     };
     fetchTasks();
   }, []);
@@ -76,11 +78,12 @@ function App() {
   // console.log(tasks);
 
   //transfert of our props (initial state value and a setter for our state) to a Todos component and a NewTaskSearch component.
-  return (
+  return isLoading ? (
+    <span>En cours de chargement...</span>
+  ) : (
     <div className={tasks.darkMode ? "App night" : "App day"}>
       <Header mode={mode} tasks={tasks} />
       <hr />
-      {}
       <Todos tasks={tasks} setTasks={setTasks} searchResult={searchResult} />
       <NewTaskSearch tasks={tasks} setTasks={setTasks} />
       <Footer />
